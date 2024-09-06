@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "rwa-defi-platform-backend": {
+      "main": "src/rwa-defi-platform-backend/main.mo",
+      "type": "motoko"
+    },
+    "rwa-defi-platform-frontend": {
+      "dependencies": [
+        "rwa-defi-platform-backend"
+      ],
+      "source": [
+        "src/rwa-defi-platform-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "rwa-defi-platform-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
