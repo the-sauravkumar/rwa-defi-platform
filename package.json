@@ -14,5 +14,17 @@
   "type": "module",
   "workspaces": [
     "src/rwa-defi-platform-frontend"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/agent": "^2.0.0",
+    "@dfinity/auth-client": "^2.0.0",
+    "@dfinity/candid": "^2.0.0",
+    "@dfinity/nns": "^6.0.0",
+    "@dfinity/principal": "^2.0.0",
+    "recharts": "^2.12.7",
+    "styled-jsx": "^5.1.6"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.2"
+  }
 }

@@ -1,37 +1,372 @@
+/* SCSS Styles for App.jsx and HTML Structure */
+
+/* General Reset and Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  font-size: 1.5rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
 
-img {
-  max-width: 50vw;
-  max-height: 25vw;
-  display: block;
-  margin: auto;
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #003366;
+  color: white;
+  padding: 1rem 0;
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-left: 1.5rem;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        
+        &:hover {
+          color: #ffcc00;
+        }
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+  }
+}
+
+/* Account Section */
+.account-info {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  .value {
+    color: #0066cc;
+    font-weight: bold;
+  }
+}
+
+/* Buttons */
+button {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  
+  &.bg-blue-500 {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  &.bg-green-500 {
+    background-color: #2ecc71;
+    color: white;
+  }
+  
+  &.bg-red-500 {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  &.bg-purple-500 {
+    background-color: #9b59b6;
+    color: white;
+  }
+  
+  &.bg-indigo-500 {
+    background-color: #34495e;
+    color: white;
+  }
+  
+  &.bg-yellow-500 {
+    background-color: #f1c40f;
+    color: white;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  transition: border-color 0.3s ease;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+  
+  &:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+}
+
+/* Alerts */
+.alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  
+  &.bg-red-100 {
+    background-color: #fdecea;
+    border-color: #f5c6cb;
+    color: #a94442;
+  }
+  
+  &.bg-green-100 {
+    background-color: #e6ffed;
+    border-color: #a3e3a3;
+    color: #2d572c;
+  }
+}
+
+/* Forms */
 form {
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .flex {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+/* Sticky Footer */
+body, html {
+  height: 100%;
+}
+
+body {
   display: flex;
-  justify-content: center;
-  gap: 0.5em;
-  flex-flow: row wrap;
-  max-width: 40vw;
-  margin: auto;
-  align-items: baseline;
+  flex-direction: column;
 }
 
-button[type="submit"] {
-  padding: 5px 20px;
-  margin: 10px auto;
-  float: right;
+main {
+  flex: 1;
 }
 
-#greeting {
-  margin: 10px auto;
-  padding: 10px 60px;
-  border: 1px solid #222;
+footer {
+  background-color: #003366;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  
+  p {
+    margin: 0;
+  }
 }
 
-#greeting:empty {
-  display: none;
+/* Table */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  thead {
+    background-color: #003366;
+    color: white;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    .nav-links {
+      position: fixed;
+      left: -100%;
+      top: 5rem;
+      flex-direction: column;
+      background-color: #003366;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+      
+      .nav-links.active {
+        display: flex; /* Show the menu when active */
+        left: 0; /* Bring the menu into view */
+      }
+    
+      .nav-links li {
+        margin: 2.5rem 0; /* Space out menu items */
+      }
+    
+      .hamburger {
+        display: block; /* Show the hamburger menu on mobile */
+      }
+
+      &.active {
+        left: 0;
+      }
+
+      li {
+        margin: 2.5rem 0;
+      }
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+  .account-info {
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    max-width: 100%;
+    // margin-right: 0;
+  }
+  
+  form {
+    flex-direction: column;
+
+    .flex {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    min-width: 500px;
+  }
+}
+
+/* Hamburger Menu Animation */
+.hamburger {
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  &.active {
+    .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+  }
 }
